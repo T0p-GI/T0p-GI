@@ -5,7 +5,7 @@
    Companions for the Pearson T Level in Digital Support & Security:
      • CO1 — Problem Solving
      • CO2 — Introduction to Digital Support
-     • CO3 — Emerging Issues
+     • CO3 — Data
    Boss Mode questions mirror the structure of the Pearson Core Paper 1
    Specimen Assessment Material (90 marks, 2h15) and its mark scheme.
 
@@ -530,152 +530,336 @@ const WORLD_DIGITAL_SUPPORT = {
 };
 
 /* ----------------------------------------------------------------------------
-   WORLD 3 — EMERGING ISSUES (CO3)
+   WORLD 3 — DATA (CO3)
    -------------------------------------------------------------------------- */
-const WORLD_EMERGING_ISSUES = {
+const WORLD_DATA = {
   id: "co3",
   code: "CO3",
-  name: "Emerging Issues",
-  blurb: "Impact of digital technologies, inclusion and emerging tech.",
-  icon: "🌐",
+  name: "Data",
+  blurb: "Data & information, types, formats, storage, quality, systems, visualisation, models & access.",
+  icon: "📊",
   levels: [
     {
-      id: "impact-reliance",
-      spec: "3.1.1",
-      title: "Impact of Increased Reliance",
-      summary: "Effects on organisational culture and society.",
+      id: "data-info-knowledge",
+      spec: "6.1.1",
+      title: "Data, Information & Knowledge",
+      summary: "The DIKW hierarchy and how the terms differ.",
       learn: [
-        "<p>Increased reliance on digital systems changes <b>organisational culture</b>: new communication methods, higher productivity and <b>availability expectations</b> (always-on, leading to stress/burnout), increased <b>staff monitoring</b>, and new <b>agile working practices</b> (Scrum, Kanban, Extreme Programming, Lean).</p>",
-        "<p><b>Automation of services (including AI)</b> takes over repetitive tasks, causing job displacement and a need to reskill/upskill — but also creating demand for people who manage and innovate with automated systems.</p>",
-        "<p><b>Impacts on society:</b> loss of jobs (self-checkouts, robotic arms), a shift in skill requirements (coding, data handling), reduced human decision-making and loss of empathy (algorithms approving loans), reduced <b>privacy</b> (digital footprints, surveillance), changing behaviours, and access to wider networks and services.</p>"
+        "<p>These three terms are often confused but are distinct — and form a <b>hierarchy</b> (you cannot have knowledge without information, or information without data).</p>",
+        "<ul><li><b>Data</b> — raw facts and figures with no context (e.g. <code>HN39XKC</code>). It can be text, symbols or numbers and is the first building block.</li><li><b>Information</b> — data that has been given <b>context</b> to add meaning (e.g. \"HN39XKC is the number plate of a car seen outside a bank during a robbery\").</li><li><b>Knowledge</b> — the ability to understand and <b>extrapolate</b> from information to act or predict (e.g. \"the same car appeared at two robberies, so the driver may be involved\").</li></ul>",
+        "<p>Experience, intuition and awareness help turn information into knowledge.</p>"
       ],
       flashcards: [
-        { f: "Why can 'always-on' availability expectations be harmful?", b: "Constant availability outside working hours contributes to stress, burnout and poor work–life balance." },
-        { f: "Give one positive and one negative impact of automation on jobs.", b: "Positive: demand for staff who manage/innovate with automated systems. Negative: job displacement and unemployment." },
-        { f: "What is a digital footprint?", b: "A trail of data created through browsing, social media, online purchases and app activity." }
+        { f: "Define data.", b: "Raw facts and figures with no context — the first building block (e.g. text, numbers or symbols)." },
+        { f: "How does information differ from data?", b: "Information is data that has been given context to add meaning." },
+        { f: "What is knowledge in the DIKW hierarchy?", b: "The ability to understand and extrapolate from information so it can be used to act or predict outcomes." }
       ],
       quiz: [
-        { q: "Always-on availability expectations most directly risk…", options: ["Faster cables", "Stress and burnout", "Lower latency", "More codecs"], answer: 1, why: "Constant availability harms work–life balance." },
-        { q: "Algorithms approving loans without context can cause…", options: ["Lower jitter", "Bias and loss of empathy", "Better cabling", "Higher clock speed"], answer: 1, why: "They lack human judgement and empathy." },
-        { q: "Name a societal effect of automation.", options: ["Loss of jobs", "Faster Wi-Fi", "Bigger monitors", "More RAM"], answer: 0, why: "Automation displaces many traditional jobs." }
+        { q: "'HN39XKC' on its own, with no context, is…", options: ["Information", "Data", "Knowledge", "Metadata"], answer: 1, why: "Raw facts with no context are data." },
+        { q: "Adding context to data produces…", options: ["Knowledge", "Information", "More data", "A database"], answer: 1, why: "Contextualised data = information." },
+        { q: "Predicting an outcome from past information demonstrates…", options: ["Data", "Knowledge", "Validation", "A data type"], answer: 1, why: "Knowledge extrapolates from information." }
       ]
     },
     {
-      id: "digital-inclusion",
-      spec: "3.1.2",
-      title: "Digital Inclusion",
-      summary: "Ensuring fair access to digital services.",
+      id: "data-generated",
+      spec: "6.1.2",
+      title: "How Data is Generated",
+      summary: "Human, AI/ML, sensor, IoT and transactional sources.",
       learn: [
-        "<p><b>Digital inclusion</b> ensures fair access to digital services. The ONS reported ~5.3 million UK adults (~10%) had never/recently not used the Internet, missing cheaper online shops, online banking, government support and free courses.</p>",
-        "<p><b>Considerations:</b></p><ul><li><b>Suitable technologies</b> — affordable hardware/software and assistive tools.</li><li><b>Connectivity</b> — Internet access; cloud/lightweight apps help low-spec devices and poor rural broadband.</li><li><b>Checking for bias in datasets</b> — biased training data causes unfair AI outcomes (facial recognition, recruitment, credit scoring).</li><li><b>Codes of best practice</b> — secure coding, privacy, GDPR, transparency, diversity and equity.</li><li><b>Accessibility regulations</b> — <b>WCAG</b> require screen-reader support, keyboard navigation, high contrast and captions.</li></ul>"
+        "<p><b>Human-generated data</b> — files, emails, searches, CCTV; deliberately collected via <b>surveys</b> (questions) and <b>forms</b> (paper or online).</p>",
+        "<p><b>AI & machine learning</b> — generative AI produces text/predictions/recommendations; ML repeatedly adjusts to reach a desired result. AI can create <b>synthetic data</b> (mimics real data's statistics without using real data, avoiding privacy issues). Beware <b>AI feedback loops</b> (training AI on AI-generated data reinforces bias).</p>",
+        "<p><b>Sensors</b> detect changes in the environment (temperature, accelerometer, vibration, sound, light, pressure) and send data to a processor.</p>",
+        "<p><b>IoT (Internet of Things)</b> — a network of interconnected smart objects, each with a unique identifier (UID), that exchange data over a network without human interaction. <b>Transactional data</b> comes from transactions (purchases, returns, invoices, payroll); loyalty schemes use it to target marketing.</p>"
       ],
       flashcards: [
-        { f: "What is digital inclusion?", b: "Ensuring fair, equal access to digital services regardless of income or background." },
-        { f: "What do the WCAG require?", b: "Services usable by people with disabilities — screen readers, keyboard navigation, high contrast, captions." },
-        { f: "Why must datasets be checked for bias?", b: "Biased training data causes unfair/discriminatory AI outcomes (e.g. facial recognition, recruitment, credit scoring)." }
+        { f: "What is synthetic data?", b: "AI-created data that mimics the statistical properties of real data without using any real data — useful for testing without privacy issues." },
+        { f: "Define the Internet of Things (IoT).", b: "A network of interconnected devices, each with a unique identifier (UID), that transfer data over a network without human interaction." },
+        { f: "What is transactional data and give a use.", b: "Data collected from transactions (purchases, invoices, payroll). Loyalty schemes use it to spot buying trends and target marketing." }
       ],
       quiz: [
-        { q: "WCAG stands for guidelines about…", options: ["Cabling standards", "Web Content Accessibility", "Codec compression", "Wireless coverage"], answer: 1, why: "Web Content Accessibility Guidelines." },
-        { q: "A biased dataset is most likely to cause…", options: ["Faster processing", "Unfair AI outcomes", "Lower latency", "Better cabling"], answer: 1, why: "Bias leads to discriminatory results." },
-        { q: "Cloud/lightweight apps help digital inclusion by…", options: ["Needing top-spec devices", "Working on lower-spec devices", "Blocking access", "Raising costs"], answer: 1, why: "They bridge the gap on weaker hardware." }
+        { q: "A device that detects changes in its environment and sends data to a processor is a…", options: ["Codec", "Sensor", "Foreign key", "Blob"], answer: 1, why: "Sensors detect environmental change." },
+        { q: "Data created by AI that imitates real data's statistics is…", options: ["Metadata", "Synthetic data", "Transactional data", "Big Data"], answer: 1, why: "Synthetic data mimics real data without using it." },
+        { q: "Loyalty cards mainly generate…", options: ["Sensor data", "Transactional data", "Metadata", "Qualitative data"], answer: 1, why: "Purchases are transactions." }
       ]
     },
     {
-      id: "end-user",
-      spec: "3.1.3",
-      title: "End-User Characteristics",
-      summary: "Designing for the people who use the technology.",
+      id: "ethics-value",
+      spec: "6.1.3",
+      title: "Ethical Data Practices & Data Value",
+      summary: "Ethics, GDPR and metrics for valuing data.",
       learn: [
-        "<p>The <b>end user</b> is the person who will eventually use the technology. Designers must consider end-user <b>characteristics</b> so the product meets their needs and is easy to use.</p>",
-        "<p><b>Key characteristics:</b></p><ul><li><b>Age</b> — very young users need simplified interfaces/text; older users may have less fine motor control and find touchscreens/small text difficult.</li><li><b>IT skills</b> — affect ability to use the system; low-skill users need simpler interfaces.</li><li><b>Disabilities / accessibility needs</b> — may need assistive technology (screen readers, captions).</li><li><b>Language</b> and prior experience.</li></ul>",
-        "<p>Considering these characteristics improves <b>usability</b> and inclusion.</p>"
+        "<p><b>Ethics</b> means respecting individuals' privacy, rights and dignity even where not legally required, across collection, processing, storage and use of data. Much is covered by <b>UK GDPR</b> and the <b>Data Protection Act 2018</b>.</p>",
+        "<p>Ethical questions: who owns the data and is it legal to collect? Are we <b>transparent</b> and getting informed <b>consent</b>? Is data kept private/anonymous? Are we collecting the <b>minimum</b> needed? Is it kept <b>secure</b> and <b>up to date</b>? Is collection fair, non-discriminatory and unbiased? Are we accountable?</p>",
+        "<p><b>Data metrics</b> (value of data, quantifiably): <b>quantity</b> (enough data to be useful/representative), <b>veracity</b> (accuracy/truthfulness — bias, errors, lies and being out of date reduce it), <b>time frame</b> (timely data is more valuable; usefulness decays), and <b>source</b> (data direct from customers is more reliable than bought lists)."
       ],
       flashcards: [
-        { f: "Who is the 'end user'?", b: "The individual who will eventually use the technology created." },
-        { f: "Give two end-user characteristics designers must consider.", b: "Age, IT skills, disabilities/accessibility needs, language, prior experience." },
-        { f: "Why do older users sometimes struggle with touchscreens?", b: "They may have less fine motor control and difficulty reading small text." }
+        { f: "Which two main laws cover data ethics in the UK?", b: "UK GDPR and the Data Protection Act 2018." },
+        { f: "What does 'veracity' mean as a data metric?", b: "The accuracy and truthfulness of data — reduced by bias, entry errors, being out of date or falsification." },
+        { f: "Why does the source of data affect its value?", b: "Data collected directly from customers is more reliable than data bought from a third-party list." }
       ],
       quiz: [
-        { q: "An 'end-user characteristic' is…", options: ["A cable category", "A trait of the person who uses the system (e.g. age, skill)", "A codec", "A firewall rule"], answer: 1, why: "Characteristics describe the users themselves." },
-        { q: "Very young users typically need…", options: ["Complex menus", "Simplified interfaces and text", "Smaller fonts", "No interface"], answer: 1, why: "Simpler design suits young users." },
-        { q: "Designing for end-user characteristics improves…", options: ["Latency", "Usability and inclusion", "Cable shielding", "Clock speed"], answer: 1, why: "It makes systems easier and fairer to use." }
+        { q: "Collecting only the data you actually need is the principle of…", options: ["Maximisation", "Data minimisation", "Redundancy", "Velocity"], answer: 1, why: "Collect the minimum needed for the task." },
+        { q: "The accuracy/truthfulness of data is its…", options: ["Volume", "Veracity", "Variety", "Velocity"], answer: 1, why: "Veracity = truthfulness." },
+        { q: "Survey data about fraud is often low quality because…", options: ["It is too large", "People may lie", "It is encrypted", "It is structured"], answer: 1, why: "Honesty lowers veracity for sensitive topics." }
       ]
     },
     {
-      id: "professional-development",
-      spec: "3.1.4",
-      title: "Professional Development",
-      summary: "Why ongoing learning matters in digital careers.",
+      id: "why-orgs-need-data",
+      spec: "6.1.4–6.1.5",
+      title: "Why Organisations Need Data",
+      summary: "Trends, system performance, monitoring, marketing, threats.",
       learn: [
-        "<p><b>Professional development</b> is ongoing training and learning that helps someone improve their skill set and stay up to date in their career.</p>",
-        "<p><b>Benefits:</b></p><ul><li>Increased industry and sector <b>competence</b>.</li><li>Increased <b>employability</b> and employment security.</li><li>Access to and adherence to <b>industry standards</b>.</li></ul>",
-        "<p>Professionals upskill using platforms and resources, follow industry news, and join professional bodies. A <b>code of best practice</b> sets agreed rules encouraging IT professionals to work ethically, safely and responsibly.</p>"
+        "<p>Organisations need data to operate and stay competitive. Uses include analysing <b>market trends</b>, <b>system performance analysis</b>, <b>user monitoring</b>, <b>targeted marketing</b>, <b>informed decision-making</b> (strategic/tactical/operational) and <b>threat/opportunity assessment</b>.</p>",
+        "<p><b>System performance</b> is measured by: <b>load</b> (work handled at a time, e.g. concurrent users), <b>throughput</b> (rate of successful processing, e.g. transactions/sec), <b>outage</b> (downtime/unavailability) and <b>status</b> (current health, e.g. HTTP 200/404). Call centres use an <b>ACD</b> to report these.</p>",
+        "<p><b>User monitoring</b> tracks visits, pages and time on page to understand behaviour. <b>Targeted marketing</b> uses login/purchase data to promote related products and <b>upsell</b>.</p>",
+        "<p><b>Threats</b> (competitors, security, compliance) and <b>opportunities</b> (new markets, mimicking rival strategies) can both be identified from data — e.g. spotting a growing vegan market trend."
       ],
       flashcards: [
-        { f: "Define professional development.", b: "Ongoing training and learning that improves skills and keeps someone up to date in their career." },
-        { f: "Give two benefits of professional development.", b: "Increased competence, increased employability/security, adherence to industry standards." },
-        { f: "What is a code of best practice?", b: "Agreed rules/guidelines encouraging IT professionals to work ethically, safely and responsibly." }
+        { f: "Name the four system-performance measures.", b: "Load, throughput, outage and status." },
+        { f: "Difference between load and throughput?", b: "Load = work handled at a given time (e.g. concurrent users); throughput = rate of successful processing (e.g. transactions per second)." },
+        { f: "What is targeted marketing?", b: "Using data about who a customer is and what they view/buy to promote related products and upsell to them specifically." }
       ],
       quiz: [
-        { q: "Professional development mainly provides…", options: ["Faster hardware", "Ongoing skills and currency", "Cheaper cables", "More RAM"], answer: 1, why: "It keeps skills current." },
-        { q: "A code of best practice encourages professionals to work…", options: ["Quickly only", "Ethically, safely and responsibly", "Without testing", "In isolation"], answer: 1, why: "It sets ethical/safe standards." },
-        { q: "A benefit of CPD is increased…", options: ["Latency", "Employability and security", "Packet loss", "Jitter"], answer: 1, why: "Staying current improves employability." }
+        { q: "The number of concurrent users a system is handling is its…", options: ["Throughput", "Load", "Status", "Outage"], answer: 1, why: "Load = work handled at a time." },
+        { q: "A period when a system is unavailable is an…", options: ["Outage", "Upsell", "Index", "Edge"], answer: 0, why: "Outage = downtime." },
+        { q: "Suggesting a warranty to someone who bought a vacuum is…", options: ["An outage", "Upselling (targeted marketing)", "Validation", "Wrangling"], answer: 1, why: "Upselling promotes related products." }
       ]
     },
     {
-      id: "emerging-tech",
-      spec: "3.2.1",
-      title: "Emerging Technologies",
-      summary: "IoT, AI, ML, AR/VR, blockchain, quantum and more.",
+      id: "transforming-data",
+      spec: "6.2.1",
+      title: "Transforming Data",
+      summary: "Manipulating, processing and analysing data.",
       learn: [
-        "<p><b>Storage & processing</b> keep advancing (faster processors, bigger/smaller storage). <b>Quantum computing</b> uses qubits to solve some problems far faster than traditional computers.</p>",
-        "<p><b>Internet of Things (IoT)</b> — networked smart devices, wearables, sensors and appliances accessible via apps/the Internet.</p>",
-        "<p><b>AI</b> performs tasks needing human intelligence. <b>Generative AI</b> creates new content (text, images, video, audio) from learned patterns. <b>Machine learning</b> (incl. deep learning) improves from data without explicit rules. Risks: bias from old data, manipulation of vulnerable users, opaque/non-transparent decisions, and misuse (deepfakes).</p>",
-        "<p><b>Extended reality:</b> <b>AR</b> superimposes digital objects on the real world via a camera/device; <b>VR</b> immerses the user via a headset. The <b>Metaverse</b> is a shared virtual space. <b>Open-source software</b> is free to view/use/modify. <b>Blockchain</b> records data securely in a chain of blocks (used for cryptocurrency). <b>Autonomous machines</b> (e.g. self-driving cars) operate without human control using sensors and AI.</p>",
-        "<p><b>Environmental impact:</b> energy use of always-on routers/switches, and harm from mining <b>rare earth metals</b> (lithium, cobalt) for electronics.</p>"
+        "<p>Methods of transforming data fall into three categories:</p>",
+        "<ul><li><b>Manipulating</b> — modifying structure/content to prepare for import or analysis: filtering, sorting, renaming fields, concatenating/merging fields, type conversion (text→numbers).</li><li><b>Processing</b> — changing data for modelling/automation: pivot tables, removing extreme values, encoding (e.g. eye-colour text into standard categories), inputting missing values by inference.</li><li><b>Analysing</b> — exploring for insight: noise/anomaly removal, statistics (mean, median, variance), grouping/subtotals, correlation and outlier detection.</li></ul>",
+        "<p>Example: targeted mailings need raw purchase data <b>manipulated</b> (match formats), <b>processed</b> (remove/merge records), then <b>analysed</b> (most popular items/bundles)."
       ],
       flashcards: [
-        { f: "Difference between AR and VR?", b: "AR superimposes digital objects onto the real world via a camera/device; VR fully immerses the user in a computerised world via a headset." },
-        { f: "What is machine learning?", b: "AI where computers learn from data and improve over time without being programmed with specific rules." },
-        { f: "What is blockchain?", b: "A secure way of recording data in a chain of blocks, often used for cryptocurrency and secure record-keeping." },
-        { f: "What is the Internet of Things (IoT)?", b: "A large number of networked smart devices, wearables, sensors and appliances accessible via apps or the Internet." },
-        { f: "Give one environmental impact of emerging tech.", b: "Energy use of always-on routers/switches, or environmental harm from mining rare earth metals." }
+        { f: "Name the three categories of transforming data.", b: "Manipulating (structure/content), processing (for modelling/automation), and analysing (for insight)." },
+        { f: "Give one example of manipulating data.", b: "Filtering, sorting, renaming fields, merging fields, or type conversion (e.g. text to numbers)." },
+        { f: "What is encoding when processing data?", b: "Converting free-text values into a standard set of categories (e.g. eye-colour descriptions into agreed colour codes)." }
       ],
       quiz: [
-        { q: "Technology that superimposes digital objects on the real world is…", options: ["VR", "AR", "IoT", "Blockchain"], answer: 1, why: "AR augments the real world; VR replaces it." },
-        { q: "Qubits are used by…", options: ["Quantum computing", "Ethernet", "MP3", "Kanban"], answer: 0, why: "Quantum computing uses qubits." },
-        { q: "AI that learns from data without explicit rules is…", options: ["Machine learning", "A firewall", "A codec", "A precedence table"], answer: 0, why: "ML improves from data automatically." },
-        { q: "Blockchain stores data as…", options: ["A single file", "A secure chain of blocks", "A spreadsheet only", "A routing table"], answer: 1, why: "Chain-of-blocks structure secures records." },
-        { q: "Rare earth metals are a concern because…", options: ["They are too cheap", "Mining them harms the environment", "They speed up Wi-Fi", "They reduce latency"], answer: 1, why: "Extraction damages the environment." }
+        { q: "Converting text values into numbers is an example of…", options: ["Analysing", "Manipulating", "Outputting", "Encrypting"], answer: 1, why: "Type conversion is manipulation." },
+        { q: "Removing an anomalous 10°C reading from 16–19°C data is…", options: ["Manipulating structure", "Noise/outlier removal (analysing)", "Encoding", "Indexing"], answer: 1, why: "Removing anomalies is part of analysis." },
+        { q: "Creating a pivot table is best described as…", options: ["Processing", "Renaming fields", "Sorting", "Validation"], answer: 0, why: "Pivot tables prepare data for modelling — processing." }
       ]
     },
     {
-      id: "tech-impacts",
-      spec: "3.2.2",
-      title: "Technologies & Their Impacts",
-      summary: "How emerging tech affects society and individuals.",
+      id: "data-taxonomy",
+      spec: "6.3.1–6.3.6",
+      title: "Data Taxonomy",
+      summary: "Quantitative/qualitative; discrete, continuous, categorical.",
       learn: [
-        "<p>Emerging technologies (AI, IoT, cloud, blockchain, VR/AR) often work <b>together</b> — IoT sensors send data to the cloud where AI analyses it; blockchain secures IoT data.</p>",
-        "<p><b>Positive impacts:</b> better healthcare (AI diagnostics, remote AR surgery), education (immersive learning), public services (smart transport/energy), safer/transparent supply chains (blockchain in food safety), richer communication/entertainment.</p>",
-        "<p><b>Negative impacts:</b> job threats from automation, privacy concerns (mass data collection), AI-driven social-media algorithms spreading misinformation, the <b>digital divide</b> widening inequality, information overload, screen time/social isolation, and AI decisions that can discriminate.</p>",
-        "<p>For individuals: more convenience and personalisation, but risks to privacy, mental health and fair treatment — and those lacking <b>digital literacy</b> struggle to navigate risks safely.</p>"
+        "<p><b>Quantitative data</b> is measurable and numerical, so calculations (counts, totals, averages) can be done. It is usually <b>structured</b> (predefined format, easily searched/sorted), often from closed/multiple-choice questions.</p>",
+        "<p>Numeric data can be:</p><ul><li><b>Discrete</b> — countable, separate values (students in a class, dice rolls, shoe sizes).</li><li><b>Continuous</b> — infinite values in a range, measured not counted (height, time).</li><li><b>Categorical</b> — values assigned to a category (a 1–5 satisfaction rating).</li></ul>",
+        "<p><b>Qualitative data</b> cannot be expressed numerically (e.g. opinions). It gives deeper insight and is collected by open questions/interviews/focus groups. It is usually <b>unstructured</b> (harder to search/analyse) but can be <b>codified</b> into structured/quantitative data (e.g. tagging comments positive/negative)."
       ],
       flashcards: [
-        { f: "Give an example of emerging technologies working together.", b: "IoT sensors send data to cloud servers where AI analyses it; blockchain secures data from IoT devices." },
-        { f: "What is the digital divide?", b: "The gap where not everyone has equal access to digital technologies, which can widen social inequality." },
-        { f: "Give one positive and one negative societal impact of emerging tech.", b: "Positive: improved healthcare/education. Negative: job losses, privacy concerns, misinformation." }
+        { f: "Quantitative vs qualitative data?", b: "Quantitative is measurable/numerical (calculations possible); qualitative cannot be expressed numerically (e.g. opinions, deeper insight)." },
+        { f: "Difference between discrete and continuous data?", b: "Discrete is countable separate values (e.g. shoe sizes); continuous has infinite values in a range and is measured (e.g. height)." },
+        { f: "How can qualitative data become quantitative?", b: "By codifying it into categories (e.g. tagging survey comments as positive/negative), which is an interpretation of the original." }
       ],
       quiz: [
-        { q: "The 'digital divide' refers to…", options: ["Splitting a hard drive", "Unequal access to technology widening inequality", "A network partition", "A codec split"], answer: 1, why: "It's about unequal access." },
-        { q: "A positive impact of blockchain in food safety is…", options: ["More spam", "Transparent supply chains", "Higher latency", "Job loss"], answer: 1, why: "Blockchain adds transparency." },
-        { q: "AI-driven social media algorithms can negatively…", options: ["Reduce packet loss", "Spread misinformation", "Shield cables", "Lower clock speed"], answer: 1, why: "Algorithms can amplify misinformation." }
+        { q: "Height measured to many decimal places is…", options: ["Discrete", "Continuous", "Categorical", "Boolean"], answer: 1, why: "Continuous = infinite values in a range." },
+        { q: "Qualitative data is usually…", options: ["Structured", "Unstructured", "Numeric", "Boolean"], answer: 1, why: "Opinions are unstructured." },
+        { q: "The number of students in a class is…", options: ["Continuous", "Discrete", "Qualitative", "Unstructured"], answer: 1, why: "It is a countable, separate value." }
+      ]
+    },
+    {
+      id: "data-types",
+      spec: "6.4.1–6.4.4",
+      title: "Data Types",
+      summary: "Integer, real, character, string, Boolean, date, Blob.",
+      learn: [
+        "<p>Programming languages define <b>data types</b>:</p><ul><li><b>Integer</b> — a whole number (positive, negative or zero).</li><li><b>Real</b> (float) — a number with a fractional/decimal part.</li><li><b>Character</b> — a single letter, digit, symbol or space.</li><li><b>String</b> — a sequence of characters.</li><li><b>Boolean</b> — one of two values, true or false (used for selection/repetition; combined with NOT/AND/OR).</li><li><b>Date</b> — a compound type (day, month, year, optionally time).</li><li><b>Blob</b> (Binary Large Object) — stores large binary objects such as images, video or audio in a database.</li></ul>",
+        "<p><b>Structured</b> data uses predefined types (sortable, addable, comparable); <b>unstructured</b> data (e.g. a Blob) does not. <b>Choosing the right type matters</b>: CSV Booleans may be stored as 0/1 or Y/N and need converting; averages of integers must be stored as <b>real</b>."
+      ],
+      flashcards: [
+        { f: "Difference between an integer and a real?", b: "An integer is a whole number; a real (float) has a fractional/decimal part." },
+        { f: "What does a Boolean store and what is it used for?", b: "One of two values (true/false); used to control selection and repetition in programs." },
+        { f: "What is a Blob used for?", b: "Storing large binary objects (images, video, audio) in a database." }
+      ],
+      quiz: [
+        { q: "Storing pass/fail results is best done with a…", options: ["Real", "Boolean", "String", "Blob"], answer: 1, why: "Boolean holds one of two values." },
+        { q: "An image stored in a database uses a…", options: ["Integer", "Character", "Blob", "Date"], answer: 2, why: "Blob = Binary Large Object." },
+        { q: "The average of integer scores should be stored as…", options: ["Integer", "Real", "Boolean", "Character"], answer: 1, why: "Averages have decimals, so use real." }
+      ]
+    },
+    {
+      id: "data-formats",
+      spec: "6.5.1–6.5.2",
+      title: "Data Formats",
+      summary: "Text, CSV, XML, JSON, ASCII and UTF-8.",
+      learn: [
+        "<p>Common <b>data formats</b>:</p><ul><li><b>Text (.txt)</b> — plain, unformatted text.</li><li><b>CSV</b> — comma-separated values; tabular plain text, one row per line. Very portable and widely readable, but holds no formatting.</li><li><b>XML</b> — eXtensible Markup Language; uses <b>tags</b> to define structure; human- and machine-readable; strong schema support, used by many legacy systems.</li><li><b>JSON</b> — JavaScript Object Notation; lightweight data-interchange format used by web APIs; quick to process.</li></ul>",
+        "<p><b>Character sets:</b> <b>ASCII</b> is a 7-bit set of 128 characters (English only, 1 byte). <b>UTF-8</b> extends this using up to 4 bytes — backwards-compatible with ASCII and able to represent all Unicode characters (other alphabets, emojis).</p>",
+        "<p><b>Choosing a format:</b> CSV for simple tabular exports; JSON for web APIs; XML for document-centric data/legacy schemas; UTF-8 as the modern multilingual standard."
+      ],
+      flashcards: [
+        { f: "What is a CSV file and a key benefit?", b: "Comma-separated values — tabular plain text, one row per line; very portable and readable by many programs (but no formatting)." },
+        { f: "How does XML structure data?", b: "Using tags that define the document structure, readable by humans and machines." },
+        { f: "Difference between ASCII and UTF-8?", b: "ASCII is 7-bit/1-byte (128 English characters); UTF-8 uses up to 4 bytes, is backwards-compatible with ASCII and represents all Unicode (other languages, emojis)." }
+      ],
+      quiz: [
+        { q: "Which lightweight format is the standard for modern web APIs?", options: ["CSV", "JSON", "ASCII", "TXT"], answer: 1, why: "JSON is the web-API interchange format." },
+        { q: "Which format uses tags to define structure?", options: ["CSV", "XML", "ASCII", "TXT"], answer: 1, why: "XML is tag-based markup." },
+        { q: "UTF-8 is preferred over ASCII because it…", options: ["Is smaller always", "Can represent all Unicode characters", "Has no structure", "Is encrypted"], answer: 1, why: "UTF-8 supports many languages and emojis." }
+      ]
+    },
+    {
+      id: "metadata-storage",
+      spec: "6.6.1–6.6.4",
+      title: "Metadata & Storage Structures",
+      summary: "Metadata, file/directory structures and storage types.",
+      learn: [
+        "<p><b>Metadata</b> is 'data about data' — descriptions, context or attributes of the primary data (e.g. a CSV's column headers, an image's date/location/resolution, ownership/access rights). Accurate metadata aids navigation and improves <b>SEO</b>; standards bodies include ANSI and ISO.</p>",
+        "<p><b>File-based structures</b> organise data into separate typed files (e.g. .docx, .xlsx) with clear naming. <b>Directory-based structures</b> organise files into folders/sub-folders (a hierarchy) — more storage overhead but quicker direct access. A file may logically belong in more than one folder, so searching is needed.</p>",
+        "<p><b>Storage structures</b> — how data is physically/logically stored: flat files (CSV/JSON/XML), <b>relational databases</b> (MySQL), <b>NoSQL</b> (MongoDB), <b>data lakes/warehouses</b>, and <b>cloud object storage</b> (AWS S3). Data often must be transformed between these."
+      ],
+      flashcards: [
+        { f: "What is metadata? Give an example.", b: "Data about data — e.g. a CSV's column headers, or an image's date, location and resolution." },
+        { f: "File-based vs directory-based structures?", b: "File-based stores separate typed files; directory-based organises files into folders/sub-folders (a hierarchy) with quicker direct access but more overhead." },
+        { f: "Name two types of storage structure.", b: "Flat files (CSV/JSON/XML), relational databases, NoSQL databases, data lakes/warehouses, cloud object storage." }
+      ],
+      quiz: [
+        { q: "Column headers that tell you what each column means are…", options: ["Metadata", "A Blob", "An outage", "A foreign key"], answer: 0, why: "Metadata describes the primary data." },
+        { q: "Organising files into folders and sub-folders is a…", options: ["Flat file", "Directory-based structure", "Codec", "Pivot table"], answer: 1, why: "Folders/sub-folders form a hierarchy." },
+        { q: "MySQL is an example of a…", options: ["Flat file", "Relational database", "Sensor", "Character set"], answer: 1, why: "MySQL is a relational DBMS." }
+      ]
+    },
+    {
+      id: "bigdata-quality",
+      spec: "6.7.1–6.7.6",
+      title: "Big Data & Data Quality",
+      summary: "The six Vs and data quality assurance methods.",
+      learn: [
+        "<p><b>Big Data</b> is extremely large, complex datasets that traditional tools struggle to process. Its <b>six Vs</b> are: <b>Volume</b> (amount), <b>Velocity</b> (speed generated), <b>Variety</b> (structured/semi/unstructured), <b>Veracity</b> (trustworthiness), <b>Value</b> (business worth) and <b>Variability</b> (changing/inconsistent data).</p>",
+        "<p><b>Data quality assurance</b> methods: <b>Validation</b> (automatic check that data is sensible/in range — does not check accuracy), <b>Verification</b> (checking data is correct, e.g. double entry/proofreading), <b>Reliability</b> (accuracy & completeness), <b>Consistency</b> (uniform format across systems, e.g. 'Rd' vs 'Road'), <b>Integrity</b> (accuracy/trustworthiness across its life cycle, e.g. unbroken key relationships), and avoiding <b>Redundancy</b> (the same data duplicated, risking mismatched updates).</p>",
+        "<p><b>Maintenance factors:</b> an organisation's <b>time</b>, <b>skills</b> and <b>cost</b> determine how well data is maintained (a multinational has a data protection officer; a sole trader fits it around other roles). Remember: <i>garbage in, garbage out</i>."
+      ],
+      flashcards: [
+        { f: "List the six Vs of Big Data.", b: "Volume, Velocity, Variety, Veracity, Value and Variability." },
+        { f: "Difference between validation and verification?", b: "Validation is an automatic check that data is sensible/in range (not accuracy); verification checks data is correct, e.g. by double entry or proofreading." },
+        { f: "What is data redundancy and why is it a problem?", b: "The same data stored in more than one place; if updated in one place and not the other, the organisation may use erroneous data." }
+      ],
+      quiz: [
+        { q: "The speed at which data is generated is which V?", options: ["Volume", "Velocity", "Veracity", "Value"], answer: 1, why: "Velocity = speed of generation." },
+        { q: "An automatic check that an age isn't 250 is…", options: ["Verification", "Validation", "Redundancy", "Integration"], answer: 1, why: "Validation checks data is sensible/in range." },
+        { q: "Storing '92 Main Rd' and '92 Main Road' in two systems is a problem of…", options: ["Velocity", "Consistency", "Volume", "Veracity"], answer: 1, why: "Inconsistent formats for the same data." }
+      ]
+    },
+    {
+      id: "data-systems",
+      spec: "6.8.1–6.8.8",
+      title: "Data Systems & Entry Errors",
+      summary: "Data wrangling, core functions and data-entry errors.",
+      learn: [
+        "<p><b>Data wrangling</b> turns raw, unstructured/disorganised data into a usable structured format. Its stages are: <b>Structure → Clean → Validate → Enrich → Output</b> (clean = fill empty fields, remove duplicates, fix misplaced/charset errors; enrich = add useful extra fields).</p>",
+        "<p><b>Core functions of a data system:</b> input, search, save, integrate, organise (index), output and the <b>feedback loop</b> (output is fed back in as input).</p>",
+        "<p><b>Data-entry errors:</b> a <b>transcription</b> error is incorrectly copying data (misreading, mistyping, mishearing — e.g. 372.76 for 312.76); a <b>transposition</b> error is swapping two characters/digits (e.g. 1948 → 1984).</p>",
+        "<p><b>Avoiding errors:</b> validation, verification (e.g. entering a password twice), drop-down menus (limit choices), pre-filled defaults, and clear UI guidance. <b>Factors affecting entry:</b> the time and expertise to design/code/test input pages, plus the time to enter and verify data."
+      ],
+      flashcards: [
+        { f: "List the five stages of data wrangling.", b: "Structure, clean, validate, enrich, output." },
+        { f: "Transcription vs transposition error?", b: "Transcription = incorrectly copying data (misread/mistype/mishear); transposition = swapping two characters or digits (e.g. 1948 → 1984)." },
+        { f: "Give two ways to reduce data-entry errors on a form.", b: "Validation, verification (e.g. double entry), drop-down menus, pre-filled defaults, clear on-screen guidance." }
+      ],
+      quiz: [
+        { q: "Typing 1948 as 1984 is a…", options: ["Transcription error", "Transposition error", "Validation error", "Feedback loop"], answer: 1, why: "Two digits are swapped — transposition." },
+        { q: "The data-wrangling stage that adds useful extra fields is…", options: ["Clean", "Enrich", "Structure", "Output"], answer: 1, why: "Enrich combines/looks up extra data." },
+        { q: "Output being fed back in as input describes a…", options: ["Feedback loop", "Blob", "Pivot table", "Foreign key"], answer: 0, why: "That is a control/feedback loop." }
+      ]
+    },
+    {
+      id: "data-visualisation",
+      spec: "6.9.1–6.9.2",
+      title: "Data Visualisation",
+      summary: "Graphs, charts, tables, reports, dashboards, infographics.",
+      learn: [
+        "<p>Visual formats can make complex data easier to summarise and communicate to non-specialists. Choose the right one to avoid misleading the reader.</p>",
+        "<ul><li><b>Graphs/charts</b> — bar charts (compare), scatter graphs (correlations/trend lines), line graphs (trends over time), pie charts (percentages), Gantt (timelines), org charts, flowcharts.</li><li><b>Tables</b> — exact values; precise but visually dense and hard to spot patterns.</li><li><b>Reports</b> — context and in-depth analysis; thorough but time-consuming to read/write.</li><li><b>Dashboards</b> — multiple interactive visualisations for real-time monitoring; risk of overload and need upkeep.</li><li><b>Infographics</b> — engaging storytelling/public communication; limited detail and risk of oversimplification.</li></ul>",
+        "<p><b>Choosing:</b> graphs/charts for trends and comparisons; tables when exact values matter; reports for stakeholders; dashboards for live decision-making; infographics for general audiences."
+      ],
+      flashcards: [
+        { f: "Which chart best shows correlation between two variables?", b: "A scatter graph (it can show trend lines)." },
+        { f: "Give one benefit and one drawback of a dashboard.", b: "Benefit: interactive, real-time monitoring combining multiple visualisations. Drawback: risk of information overload and it needs infrastructure/upkeep." },
+        { f: "When is a table better than a graph?", b: "When exact values and detail/accuracy are key and the audience is data-literate." }
+      ],
+      quiz: [
+        { q: "To show proportions of total sales by payment method, use a…", options: ["Line graph", "Pie chart", "Scatter graph", "Gantt chart"], answer: 1, why: "Pie charts show percentages of a whole." },
+        { q: "A drawback of infographics is…", options: ["Too much detail", "Risk of oversimplification", "They are not shareable", "They need SQL"], answer: 1, why: "Infographics can oversimplify." },
+        { q: "Real-time monitoring of many metrics at once suits a…", options: ["Table", "Dashboard", "Single bar chart", "Text report"], answer: 1, why: "Dashboards combine live visualisations." }
+      ]
+    },
+    {
+      id: "data-models",
+      spec: "6.10.1–6.10.4",
+      title: "Data Models",
+      summary: "Relational, hierarchical and network models.",
+      learn: [
+        "<p><b>Data modelling</b> organises data into a structure to make it accessible and useful.</p>",
+        "<ul><li><b>Relational</b> — the most common; data in <b>tables</b> (entities) of <b>records</b> (rows) with a unique <b>key</b>; tables linked by <b>foreign keys</b> (e.g. one-to-many). Very efficient for large data and easy to query with SQL; normalisation reduces redundancy; complex many-level designs are harder to maintain.</li><li><b>Hierarchical</b> — a tree (like folders); each node has one parent but many children (one-to-many). Fast down well-defined paths, but slow to find children when stored relationally and poor for ad-hoc queries.</li><li><b>Network</b> — nodes link to many other nodes (<b>many-to-many</b>) via <b>edges</b> (which can carry data, e.g. distances). Great for complex relationships (social/transport networks) but complex to design and maintain.</li></ul>"
+      ],
+      flashcards: [
+        { f: "What links tables in a relational model?", b: "Foreign keys — a key from one table referenced in another (e.g. creating a one-to-many relationship)." },
+        { f: "Describe the hierarchical data model.", b: "A tree structure (like folders) where each node has one parent but can have many children — a one-to-many relationship." },
+        { f: "What relationship does a network data model support, and what are its links called?", b: "Many-to-many; the links between nodes are called edges (which can have their own data, e.g. distances)." }
+      ],
+      quiz: [
+        { q: "Which model uses tables, records and foreign keys?", options: ["Hierarchical", "Network", "Relational", "Flat"], answer: 2, why: "Relational uses linked tables." },
+        { q: "A tree where each node has exactly one parent is the…", options: ["Network model", "Hierarchical model", "Relational model", "NoSQL model"], answer: 1, why: "Hierarchical = tree, one parent per node." },
+        { q: "Many-to-many relationships via edges describe the…", options: ["Relational model", "Hierarchical model", "Network model", "CSV format"], answer: 2, why: "Network nodes link to many nodes via edges." }
+      ]
+    },
+    {
+      id: "data-access",
+      spec: "6.11.1–6.11.3",
+      title: "Data Access Across Platforms",
+      summary: "Permissions, access control models and APIs.",
+      learn: [
+        "<p><b>Access permissions</b> limit who can see data — reducing cyberattack damage and meeting GDPR (only those who need data should access the <b>minimum</b> required). Managed via <b>authorisation</b>, <b>privileges</b> (capabilities like installing software), <b>access rights</b> (file permissions), drive access, encryption and <b>rules</b> (e.g. firewall hours, specific IPs).</p>",
+        "<ul><li><b>Role-based access control (RBAC)</b> — access assigned by role/group (e.g. only HR staff see employee records). Simple and scalable but less flexible for one-offs.</li><li><b>Rule-based access control (RuBAC)</b> — specific rules per user based on time, location or device (e.g. only 8am–6pm, only company devices). Fine-grained but hard to manage with many rules.</li></ul>",
+        "<p><b>APIs</b> (Application Programming Interfaces) let two applications communicate: an app sends a request (with a security key), the server looks up and processes the data, and returns it (usually as JSON or XML). APIs enable cross-platform integration but need strong security."
+      ],
+      flashcards: [
+        { f: "What is role-based access control (RBAC)?", b: "Access assigned by role/group, so users only get the permissions their role needs (e.g. only HR can see employee records)." },
+        { f: "How does RuBAC differ from RBAC?", b: "RuBAC sets rules per user based on conditions (time, location, device), giving finer control than role/group-based RBAC." },
+        { f: "What is an API and what format does it usually return?", b: "A software intermediary that lets two applications communicate; it usually returns data as JSON or XML." }
+      ],
+      quiz: [
+        { q: "Giving HR staff access to employee records via their group is…", options: ["RuBAC", "RBAC", "An API", "A Blob"], answer: 1, why: "Role/group-based = RBAC." },
+        { q: "Allowing access only 8am–6pm from company devices is…", options: ["RBAC", "Rule-based access control", "Encryption", "A pivot table"], answer: 1, why: "Conditions per user = RuBAC." },
+        { q: "An API usually returns requested data formatted as…", options: ["CSV or TXT", "JSON or XML", "A Blob", "ASCII art"], answer: 1, why: "APIs typically use JSON or XML." }
+      ]
+    },
+    {
+      id: "data-analysis-tools",
+      spec: "6.12.1–6.12.2",
+      title: "Data Analysis Tools",
+      summary: "Warehouses, lakes, marts, mining, BI and CRM.",
+      learn: [
+        "<p><b>Storing Big Data:</b></p><ul><li><b>Data warehouse</b> — a structured database optimised to receive data from many sources and be queried quickly with SQL for reporting/analysis (like 'filtered bottled water').</li><li><b>Data lake</b> — stores raw structured <i>and</i> unstructured data in its native form (like 'water in a river'); needs more sophisticated/ML tools and cleaning before moving to a warehouse.</li><li><b>Data mart</b> — a smaller warehouse focused on one team/department (e.g. marketing).</li></ul>",
+        "<p><b>Analysing data:</b> <b>data mining</b> converts raw data into useful information by finding patterns, anomalies and correlations; <b>reporting</b> turns data into charts/tables for decision-makers (some detail is lost).</p>",
+        "<p><b>Business intelligence</b> uses analysis for financial planning (cash flow, break-even) and <b>CRM</b> (customer relationship management) to analyse interactions and personalise marketing. The bigger the data, the more these tools must work together (e.g. data lake → mining → CRM)."
+      ],
+      flashcards: [
+        { f: "Difference between a data warehouse and a data lake?", b: "A warehouse stores structured, cleaned data optimised for SQL querying; a data lake stores raw structured and unstructured data in its native form." },
+        { f: "What is a data mart?", b: "A smaller version of a data warehouse focused on one team or department (e.g. marketing)." },
+        { f: "What is data mining?", b: "Analysing large volumes of raw data to find patterns, anomalies and correlations, turning it into useful information." }
+      ],
+      quiz: [
+        { q: "A structured store optimised for fast SQL reporting is a…", options: ["Data lake", "Data warehouse", "Data mart", "CSV file"], answer: 1, why: "Warehouses are structured and query-optimised." },
+        { q: "Raw structured and unstructured data in native form is held in a…", options: ["Data warehouse", "Data lake", "Pivot table", "Foreign key"], answer: 1, why: "Data lakes hold raw native data." },
+        { q: "Finding patterns and correlations in large datasets is…", options: ["Reporting", "Data mining", "Validation", "Encoding"], answer: 1, why: "Data mining discovers patterns." }
       ]
     }
   ]
 };
 
 /* All worlds in display order */
-const WORLDS = [WORLD_PROBLEM_SOLVING, WORLD_DIGITAL_SUPPORT, WORLD_EMERGING_ISSUES];
+const WORLDS = [WORLD_PROBLEM_SOLVING, WORLD_DIGITAL_SUPPORT, WORLD_DATA];
 
 /* ----------------------------------------------------------------------------
    BOSS MODE EXAM — mirrors Pearson Core Paper 1 SAM (90 marks, 2h15)
@@ -761,16 +945,16 @@ const EXAM = {
     },
     {
       id: "A11", marks: 1, type: "mcq", source: "CO3",
-      q: "Which emerging technology superimposes digital objects onto a camera view of the real world?",
-      options: ["Virtual reality (VR)", "Augmented reality (AR)", "Blockchain", "Internet of Things"],
-      answer: 1, model: "Augmented reality (AR) (1)."
+      q: "Which data model organises data into tables of records that are linked by foreign keys?",
+      options: ["Hierarchical model", "Relational model", "Network model", "Flat file"],
+      answer: 1, model: "Relational model (1)."
     },
     {
       id: "A12", marks: 2, type: "short", source: "CO3",
-      q: "State two ways an organisation could improve digital inclusion for its users.",
-      accept: ["connectivity", "internet", "affordable", "hardware", "device", "assistive", "wcag", "accessibility", "accessible", "bias", "lightweight", "cloud", "screen reader", "captions", "contrast"],
+      q: "State two of the six Vs (dimensions) of Big Data.",
+      accept: ["volume", "velocity", "variety", "veracity", "value", "variability"],
       minKeywords: 2,
-      model: "Any two of: provide suitable/affordable hardware & software (1); improve connectivity / use lightweight or cloud apps (1); check datasets for bias (1); follow accessibility regulations such as WCAG — screen readers, captions, high contrast (1)."
+      model: "Any two of: Volume, Velocity, Variety, Veracity, Value, Variability (1 each)."
     },
     {
       id: "A13", marks: 3, type: "short", source: "CO1",
@@ -781,10 +965,10 @@ const EXAM = {
     },
     {
       id: "A14", marks: 2, type: "short", source: "CO3",
-      q: "State two benefits of professional development (CPD) for an IT technician.",
-      accept: ["competence", "employability", "security", "standards", "up to date", "current", "skills", "knowledge", "industry"],
+      q: "State the difference between a transcription error and a transposition error.",
+      accept: ["copy", "copied", "copying", "swap", "swapped", "two", "characters", "digits", "order"],
       minKeywords: 2,
-      model: "Any two of: increased industry/sector competence (1); increased employability and employment security (1); access to and adherence to industry standards / staying up to date (1)."
+      model: "A transcription error is incorrectly copying data from one source to another (1); a transposition error is swapping two characters/digits around (1)."
     },
     {
       id: "A15", marks: 2, type: "short", source: "CO2",
@@ -795,10 +979,10 @@ const EXAM = {
     },
     {
       id: "A16", marks: 6, type: "short", source: "CO3",
-      q: "Explain three impacts (positive and/or negative) of increased reliance on automation and AI in the workplace.",
-      accept: ["efficiency", "productivity", "repetitive", "routine", "job", "unemployment", "displacement", "reskill", "upskill", "empathy", "bias", "monitoring", "availability", "stress", "decision", "cost"],
+      q: "Explain three data-quality assurance methods an organisation could use to keep its data accurate and reliable.",
+      accept: ["validation", "verification", "double entry", "proofread", "proofreading", "consistency", "consistent", "integrity", "redundancy", "duplicate", "reliability", "reliable", "training"],
       minKeywords: 3,
-      model: "Award up to six marks for three developed impacts, e.g.: automation handles repetitive/routine tasks improving efficiency and productivity (1+1); but it causes job displacement, so staff must reskill/upskill (1+1); and algorithmic decision-making can introduce bias and a loss of human empathy (1+1). Accept other CO3 impacts: increased staff monitoring, always-on availability/stress, cost savings, new tech jobs."
+      model: "Award up to six marks for three developed methods, e.g.: validation automatically checks data is sensible/in range (1+1); verification (e.g. double entry/proofreading) checks data has been entered correctly (1+1); ensuring consistency and integrity, and removing redundancy (duplicate data), keeps data reliable across systems (1+1). Accept staff training and robust procedures."
     }
   ],
 
@@ -920,29 +1104,30 @@ const EXAM = {
     },
     {
       id: "B5", marks: 9, type: "extended", source: "CO3",
-      context: "A local council is moving most of its services — paying council tax, booking appointments, reporting issues — to an online-only digital platform to save money.",
-      q: "Evaluate the importance of DIGITAL INCLUSION when the council makes this change. Consider points for and against and reach a supported conclusion. (9)",
-      model: "High-level answer: Digital inclusion means ensuring fair access regardless of income or background. For the council: online services are convenient, available 24/7 and cheaper to run. However, residents who are digitally excluded — those lacking devices, affordable/stable internet, or digital skills, and older or disabled users — could be unable to access essential services, widening inequality (the digital divide). To be inclusive the council should provide suitable/affordable access, ensure connectivity, follow accessibility regulations (WCAG: screen readers, keyboard navigation, captions, high contrast) and check any datasets/AI for bias, while retaining some non-digital support. Conclusion (best-fit): digital inclusion is very important here because the services are essential and the change is digital-only; the savings do not justify excluding vulnerable residents, so inclusive design and alternative routes must be built in.",
+      context: "A library is designing a new database to store members, books and loans. Each member can borrow many books, and each book can be borrowed many times over the years. A developer suggests using a relational data model rather than a hierarchical or network model.",
+      q: "Evaluate the suitability of using a RELATIONAL data model for this library system. Consider points for and against and reach a supported conclusion. (9)",
+      model: "High-level answer: A relational model stores data in tables (Members, Books, Loans) where each record has a unique key and tables are linked by foreign keys, giving a one-to-many relationship (one member, many loans). For: it is very efficient for large amounts of data and can process millions of records quickly; it is easy to query with SQL; normalisation reduces redundancy and protects integrity. Against: for very complex datasets with many levels of relationships it can become hard to design and maintain; a hierarchical model is faster down well-defined tree paths (but slow to find children when stored relationally), and a network model handles many-to-many relationships more naturally. For a library, the relationships are simple one-to-many and the dataset is large, so SQL querying and reduced redundancy matter most. Conclusion (best-fit): the relational model is the most suitable choice here — its efficient querying and data integrity outweigh the design complexity, which is low for this straightforward structure.",
       indicative: [
-        "Digital inclusion = fair, equal access regardless of income/background.",
-        "Benefit of going online: convenient, 24/7, cheaper for the council.",
-        "Excluded groups: no device, poor/unaffordable internet, low digital skills, older/disabled users.",
-        "Risk: widens the digital divide / inequality for essential services.",
-        "Mitigations: affordable access, connectivity, WCAG accessibility, check datasets for bias, keep non-digital options.",
-        "Conclusion: inclusion is critical because services are essential and digital-only."
+        "Relational = tables (entities) of records with unique keys, linked by foreign keys (one-to-many).",
+        "For: efficient for large data; millions of records processed quickly.",
+        "For: easy to query with SQL.",
+        "For: normalisation reduces redundancy and protects integrity.",
+        "Against: complex many-level relationships are harder to design/maintain.",
+        "Compare: hierarchical fast on tree paths; network better for many-to-many.",
+        "Conclusion: relational suits the simple one-to-many, large-data library system."
       ],
       accept: [
-        ["inclusion", "fair", "equal", "access"],
-        ["convenient", "cheaper", "24", "online", "save"],
-        ["device", "internet", "skills", "older", "disabled", "excluded", "afford"],
-        ["divide", "inequality", "exclude"],
-        ["wcag", "accessibility", "accessible", "bias", "alternative", "non-digital"],
-        ["conclusion", "important", "critical", "essential"]
+        ["relational", "table", "record", "key"],
+        ["foreign key", "one-to-many", "linked", "relationship"],
+        ["sql", "query", "efficient", "large", "millions"],
+        ["normalisation", "redundancy", "integrity"],
+        ["hierarchical", "network", "tree", "many-to-many", "complex"],
+        ["conclusion", "suitable", "outweigh", "overall"]
       ],
       levels: [
         { range: "0", text: "No rewardable material." },
         { range: "1-3", text: "Basic analysis; partially relevant; superficial conclusion." },
-        { range: "4-6", text: "Good analysis of benefits and exclusion risks; partially supported conclusion." },
+        { range: "4-6", text: "Good analysis comparing models; partially supported conclusion." },
         { range: "7-9", text: "Thorough analysis; comprehensive, contextual application; well-supported conclusion." }
       ]
     },
@@ -976,32 +1161,31 @@ const EXAM = {
     },
     {
       id: "B7", marks: 12, type: "extended", source: "CO3",
-      context: "A large retailer plans to replace much of its customer-service team with an AI chatbot and automated systems to cut costs and offer 24/7 service.",
-      q: "Evaluate the impact of this decision on the organisation AND on wider society. Consider positive and negative impacts and reach a supported conclusion. (12)",
-      model: "High-level answer: For the organisation: automation handles repetitive enquiries efficiently, gives 24/7 availability and cuts staffing costs; it can create demand for staff who manage and improve the AI, and free remaining staff for complex, creative work. Negatives: job displacement and the need to reskill/upskill staff; the chatbot lacks human empathy and judgement, which can frustrate vulnerable customers; AI trained on old/biased data can give discriminatory or wrong answers, and collecting customer data raises privacy concerns. For society: efficiency and round-the-clock services are convenient, but widespread automation increases unemployment and can widen inequality and the digital divide, and AI-driven decisions can reduce transparency and personal connection. Conclusion (best-fit): the decision benefits the organisation through cost savings and availability, but the social costs (job losses, loss of empathy, bias and privacy) are significant; it is justifiable only if the retailer reskills affected staff, keeps a human escalation route, and manages bias and data responsibly. (AO2b application carries the most weight.)",
+      context: "A national supermarket collects huge amounts of data from loyalty cards, online orders, in-store sensors and social media. It wants to store and analyse this 'Big Data' to inform marketing and stock decisions. A consultant proposes building a data lake feeding a data warehouse, with data mining and a CRM system, but the data has quality and ethical concerns.",
+      q: "Evaluate the suitability of this Big Data approach for the supermarket, considering data storage, quality and ethics, and reach a supported conclusion. (12)",
+      model: "High-level answer: The data shows the six Vs — high volume, velocity (real-time orders), variety (structured transactions plus unstructured social media), variable veracity, and potential value. Storage: a data lake suits raw structured and unstructured native data, while a data warehouse is optimised for fast SQL querying and reporting; a data mart could focus on the marketing team. Data mining can then find patterns and correlations, and a CRM can personalise marketing and build loyalty. Quality concerns: validation, verification, consistency and integrity are needed, and redundancy removed, or 'garbage in, garbage out' undermines decisions. Ethics: under UK GDPR/DPA 2018 the supermarket must be transparent, gain consent, collect the minimum needed, keep data secure and avoid bias — especially when combining loyalty and social-media data. Conclusion (best-fit): the Big Data approach is suitable and valuable for marketing/stock decisions provided the data is cleaned and quality-assured and handled ethically; without strong governance the cost, poor-quality data and privacy risks could outweigh the benefits. (AO2b application carries the most weight.)",
       indicative: [
-        "Org positive: efficiency on repetitive tasks, 24/7 availability, cost savings.",
-        "Org positive: new roles managing/improving AI; staff freed for complex work.",
-        "Org negative: job displacement; need to reskill/upskill staff.",
-        "Negative: chatbot lacks empathy/judgement; poor for vulnerable customers.",
-        "Negative: AI bias from old data; privacy concerns from data collection.",
-        "Society: convenience vs rising unemployment, inequality and digital divide.",
-        "Society: reduced transparency / loss of human connection in decisions.",
-        "Conclusion weighs organisational savings against significant social costs (reskilling, human escalation, manage bias)."
+        "Six Vs: volume, velocity (real-time), variety (structured + unstructured), veracity, value, variability.",
+        "Data lake for raw native data; data warehouse optimised for SQL reporting; data mart for marketing.",
+        "Data mining finds patterns/correlations; CRM personalises marketing and builds loyalty.",
+        "Quality: validation, verification, consistency, integrity; remove redundancy ('garbage in, garbage out').",
+        "Ethics: UK GDPR/DPA 2018 — transparency, consent, data minimisation, security, avoid bias.",
+        "Cost/skills/time needed to store, clean and maintain large data.",
+        "Conclusion weighs value of insights against quality assurance, governance and privacy risks."
       ],
       accept: [
-        ["efficiency", "repetitive", "24", "availability", "cost", "saving"],
-        ["new role", "manage", "freed", "complex", "creative"],
-        ["job", "unemployment", "displacement", "reskill", "upskill"],
-        ["empathy", "judgement", "vulnerable", "frustrat"],
-        ["bias", "privacy", "data", "discrimin"],
-        ["society", "inequality", "divide", "transparency"],
-        ["conclusion", "outweigh", "justif", "overall", "balance"]
+        ["volume", "velocity", "variety", "veracity", "value", "big data", "six vs"],
+        ["data lake", "warehouse", "data mart", "storage"],
+        ["data mining", "pattern", "crm", "marketing", "analysis"],
+        ["validation", "verification", "consistency", "integrity", "redundancy", "quality", "garbage"],
+        ["gdpr", "ethic", "consent", "transparent", "privacy", "minimum", "bias"],
+        ["cost", "skills", "time", "clean", "maintain"],
+        ["conclusion", "outweigh", "suitable", "provided", "overall"]
       ],
       levels: [
         { range: "0", text: "No rewardable material." },
         { range: "1-4", text: "Basic analysis; partially relevant application; superficial conclusion (AO2b weighted ×2)." },
-        { range: "5-8", text: "Good analysis of org and society impacts; relevant application; partially supported conclusion." },
+        { range: "5-8", text: "Good analysis of storage, quality and ethics; relevant application; partially supported conclusion." },
         { range: "9-12", text: "Thorough analysis; comprehensive, consistently relevant application; well-supported conclusion." }
       ]
     }
@@ -1117,40 +1301,41 @@ const TOPIC_TESTS = {
     co3: {
       shorts: [
         { id: "T3S1", marks: 2, type: "short",
-          q: "Define the term 'digital divide'.",
-          accept: ["unequal", "access", "inequality", "divide", "not everyone"], minKeywords: 2,
-          model: "The digital divide is the gap where not everyone has equal access to digital technologies (1), which can widen social inequality (1)." },
+          q: "Explain the difference between data and information.",
+          accept: ["raw", "facts", "figures", "context", "meaning", "no context"], minKeywords: 2,
+          model: "Data is raw facts and figures with no context (1); information is data that has been given context to add meaning (1)." },
         { id: "T3S2", marks: 2, type: "short",
-          q: "State two end-user characteristics a designer should consider.",
-          accept: ["age", "skill", "disability", "accessibility", "language", "experience"], minKeywords: 2,
-          model: "Any two of: age, IT skills, disabilities/accessibility needs, language, prior experience (1 each)." },
+          q: "State two of the six Vs of Big Data.",
+          accept: ["volume", "velocity", "variety", "veracity", "value", "variability"], minKeywords: 2,
+          model: "Any two of: Volume, Velocity, Variety, Veracity, Value, Variability (1 each)." },
         { id: "T3S3", marks: 2, type: "short",
-          q: "Give two examples of emerging technologies.",
-          accept: ["iot", "internet of things", "ai", "blockchain", "ar", "vr", "quantum", "machine learning", "metaverse", "autonomous"], minKeywords: 2,
-          model: "Any two of: IoT, AI, machine learning, AR, VR, the Metaverse, blockchain, quantum computing, autonomous machines (1 each)." }
+          q: "Name two common data formats used to store or exchange data.",
+          accept: ["csv", "json", "xml", "ascii", "utf-8", "utf8", "text", "txt"], minKeywords: 2,
+          model: "Any two of: CSV, JSON, XML, text (.txt), ASCII, UTF-8 (1 each)." }
       ],
       sixMark: {
         id: "T3B", marks: 6, type: "extended", source: "CO3",
-        context: "A warehouse company is introducing automation and AI to sort and track parcels, replacing some manual roles.",
-        q: "Discuss the positive and negative impacts of this increased reliance on automation and AI in the workplace. (6)",
-        model: "Positive: automation does repetitive tasks faster and more accurately, increasing efficiency and productivity, and creating demand for staff who manage and maintain the systems, freeing others for more complex work. Negative: it displaces manual jobs, so workers must reskill/upskill, with overall unemployment a risk; AI decisions can be biased if trained on old data, and may lack human judgement; increased staff monitoring and always-on availability can add stress. A balanced answer recognises both efficiency gains and the human/social costs.",
+        context: "A charity is building a new system to collect and store donor data entered by volunteers from paper forms.",
+        q: "Discuss how the charity could ensure good data quality and reduce data-entry errors in this system. (6)",
+        model: "Validation should automatically check that entered data is sensible and in range (e.g. a donation amount or a valid email), rejecting impossible values. Verification, such as entering key data twice (double entry) or proofreading, checks the data was copied correctly and helps catch transcription and transposition errors. The form design helps too: drop-down menus limit choices, pre-filled defaults speed entry, and clear on-screen guidance reduces mistakes. Maintaining consistency (uniform formats), protecting integrity and removing redundant duplicate records keep the data reliable. Staff training and robust procedures support all of this — remember 'garbage in, garbage out'.",
         indicative: [
-          "Positive: efficiency/productivity on repetitive tasks; faster, more accurate.",
-          "Positive: new roles managing/maintaining systems; staff freed for complex work.",
-          "Negative: job displacement; reskilling/upskilling; unemployment.",
-          "Negative: AI bias/lack of judgement; increased monitoring; stress from availability."
+          "Validation: automatic check data is sensible/in range; rejects impossible values.",
+          "Verification: double entry or proofreading catches transcription/transposition errors.",
+          "Form design: drop-downs, pre-filled defaults, clear guidance reduce errors.",
+          "Consistency, integrity and removing redundancy keep data reliable.",
+          "Staff training and procedures ('garbage in, garbage out')."
         ],
         accept: [
-          ["efficiency", "productivity", "repetitive", "faster", "accurate"],
-          ["new role", "manage", "maintain", "freed", "complex"],
-          ["job", "unemployment", "displacement", "reskill", "upskill"],
-          ["bias", "monitoring", "stress", "empathy", "judgement"]
+          ["validation", "range", "sensible", "reject"],
+          ["verification", "double entry", "proofread", "transcription", "transposition"],
+          ["drop-down", "dropdown", "default", "guidance", "form"],
+          ["consistency", "integrity", "redundancy", "reliable", "training"]
         ],
         levels: [
           { range: "0", text: "No rewardable material." },
-          { range: "1-2", text: "Basic: one impact, positive or negative." },
-          { range: "3-4", text: "Good: covers positive and negative impacts with some development." },
-          { range: "5-6", text: "Thorough: balanced positive and negative impacts, developed in context." }
+          { range: "1-2", text: "Basic: names one method with little development." },
+          { range: "3-4", text: "Good: covers validation/verification and form design with some development." },
+          { range: "5-6", text: "Thorough: several quality-assurance methods developed clearly in context." }
         ]
       }
     }
@@ -1164,7 +1349,7 @@ const BADGES = [
   { id: "first-steps",   icon: "🚀", name: "First Steps",     desc: "Complete your first level." },
   { id: "co1-clear",     icon: "🧩", name: "Logic Master",    desc: "Pass the Problem Solving topic test." },
   { id: "co2-clear",     icon: "🛠️", name: "Support Hero",    desc: "Pass the Digital Support topic test." },
-  { id: "co3-clear",     icon: "🌐", name: "Future Proof",    desc: "Pass the Emerging Issues topic test." },
+  { id: "co3-clear",     icon: "📊", name: "Data Master",     desc: "Pass the Data topic test." },
   { id: "flash-50",      icon: "🃏", name: "Card Shark",      desc: "Flip 50 flashcards." },
   { id: "quiz-ace",      icon: "🎯", name: "Sharpshooter",    desc: "Score 100% on any level quiz." },
   { id: "streak-3",      icon: "🔥", name: "On Fire",         desc: "Reach a 3-day study streak." },

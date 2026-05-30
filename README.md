@@ -10,7 +10,7 @@ Companions**:
 |-------|--------|--------------|
 | 🧩 **Problem Solving** | CO1 | Computational thinking, algorithms, strategies |
 | 🛠️ **Digital Support** | CO2 | Infrastructure, cabling, comms, testing, data, diagrams, risk, projects |
-| 🌐 **Emerging Issues** | CO3 | Digital impact, inclusion, end-users, emerging technologies |
+| 📊 **Data** | CO3 | Data & information, types, formats, storage, quality, systems, visualisation, models & access |
 
 The **Boss Mode** exam simulation mirrors the structure of the *Core Paper 1
 Specimen Assessment Material* (90 marks, 2 h 15 m) and applies the mark-scheme
