@@ -867,9 +867,8 @@ const WORLDS = [WORLD_PROBLEM_SOLVING, WORLD_DIGITAL_SUPPORT, WORLD_DATA];
    Section A (30 marks): short, points-based, auto-marked.
      type: "mcq"   -> single correct option (auto)
      type: "short" -> keyword-matched short answer (auto, accept[] keywords)
-   Section B (60 marks): scenario, levels-based, self-assessed against the
-     model answer + indicative content + level descriptors.
-     type: "extended" -> marks, model, indicative[], levels[]
+   Section B (60 marks): scenario, levels-based, auto-marked by indicative
+     content coverage.  type: "extended" -> marks, model, indicative[], levels[]
    -------------------------------------------------------------------------- */
 const EXAM = {
   durationSeconds: 8100, // 2 hours 15 minutes (full paper). App offers a short mode too.
